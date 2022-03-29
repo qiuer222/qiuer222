@@ -77,10 +77,10 @@ footer-text: Copyright (c) 2022 来自nowhere
 
 # 输入Gitalk相关设定，即可添加评论区，具体请看教程
 gitalk:
-  clientID: 
-  clientSecret: 
+  clientID: 10f7e88bf741728fcd83
+  clientSecret: a18e9cc1db0eb9a2c343f7fefc57c415de023803
   repo: 
-  owner: 
+  owner: qiuer222
   proxy:
 
 # 输入Google Analytics web tracking code
