@@ -4,4 +4,6 @@ title: 关于
 permalink: /about/
 ---
 
-这是一个关于页面，请编辑about.md以介绍你的博客。
+
+
+来自：[LOFFER – 一个可以fork的博客 (fromendworld.github.io)](https://fromendworld.github.io/LOFFER/)
