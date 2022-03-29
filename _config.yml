@@ -79,7 +79,7 @@ footer-text: Copyright (c) 2022 来自nowhere
 gitalk:
   clientID: 10f7e88bf741728fcd83
   clientSecret: a18e9cc1db0eb9a2c343f7fefc57c415de023803
-  repo: 
+  repo: blog-comments
   owner: qiuer222
   proxy:
 
