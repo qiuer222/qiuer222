@@ -77,6 +77,7 @@ footer-text: Copyright (c) 2022 来自nowhere
 
 # 输入Gitalk相关设定，即可添加评论区，具体请看教程
 gitalk:
+  enable: true
   clientID: f0f65044e3f9613e2728
   clientSecret: 50fd74a71a2aa75da108f375e0136aeea0af9061
   repo: blog-comments
