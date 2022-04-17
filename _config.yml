@@ -82,6 +82,7 @@ gitalk:
   clientSecret: 50fd74a71a2aa75da108f375e0136aeea0af9061
   repo: blog-comments
   owner: qiuer222
+  admin: qiuer222
   #proxy:
 
 # 输入Google Analytics web tracking code
