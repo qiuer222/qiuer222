@@ -1,7 +1,7 @@
-http://example.com/2022/04/23/hello-world/
-http://example.com/about/index.html
-http://example.com/tags/index.html
-http://example.com/categories/index.html
-http://example.com/
-http://example.com/tags/hello/
-http://example.com/categories/hello/
+https://qiuer222.github.io/2022/04/23/hello-world/
+https://qiuer222.github.io/about/index.html
+https://qiuer222.github.io/tags/index.html
+https://qiuer222.github.io/categories/index.html
+https://qiuer222.github.io/
+https://qiuer222.github.io/tags/hello/
+https://qiuer222.github.io/categories/hello/
