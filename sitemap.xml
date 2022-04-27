@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://qiuer222.github.io/2022/04/23/hello-world/</loc>
+    <loc>https://qiuer222.github.io/2022/04/27/BuildaBlog/</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://qiuer222.github.io/2022/04/27/BuildaBlog/</loc>
+    <loc>https://qiuer222.github.io/2022/04/23/hello-world/</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -56,7 +56,14 @@
 
   
   <url>
-    <loc>https://qiuer222.github.io/tags/blog/</loc>
+    <loc>https://qiuer222.github.io/tags/Hexo/</loc>
+    <lastmod>2022-04-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://qiuer222.github.io/tags/RSS/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -72,7 +79,7 @@
 
   
   <url>
-    <loc>https://qiuer222.github.io/categories/blog/</loc>
+    <loc>https://qiuer222.github.io/categories/%E5%8D%9A%E5%AE%A2%E5%BB%BA%E8%AE%BE/</loc>
     <lastmod>2022-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
