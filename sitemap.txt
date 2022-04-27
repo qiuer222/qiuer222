@@ -4,6 +4,7 @@ https://qiuer222.github.io/about/index.html
 https://qiuer222.github.io/tags/index.html
 https://qiuer222.github.io/categories/index.html
 https://qiuer222.github.io/
-https://qiuer222.github.io/tags/hello/
 https://qiuer222.github.io/tags/blog/
+https://qiuer222.github.io/tags/hello/
+https://qiuer222.github.io/categories/blog/
 https://qiuer222.github.io/categories/hello/
