@@ -18,28 +18,25 @@
     var CONFIG = {"hostname":"qiuer222.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="记录一下以next为模板的搭建过程和rss、邮箱推送功能的增加">
+  <meta name="description" content="使用Hexo时如何在文档内插入图片，参考：HEXO插入图片（详细版） - 简书 (jianshu.com)，但是做了一些改动！使用Typora的时候可以直接把图贴进来，不用费力去改文件名。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My Blog(1)--使用Hexo+GithubPage搭建博客+邮箱推送！">
-<meta property="og:url" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/index.html">
+<meta property="og:title" content="Hexo页面插入文档">
+<meta property="og:url" content="https://qiuer222.github.io/2022/04/28/hexo-pic/index.html">
 <meta property="og:site_name" content="qiuer222">
-<meta property="og:description" content="记录一下以next为模板的搭建过程和rss、邮箱推送功能的增加">
+<meta property="og:description" content="使用Hexo时如何在文档内插入图片，参考：HEXO插入图片（详细版） - 简书 (jianshu.com)，但是做了一些改动！使用Typora的时候可以直接把图贴进来，不用费力去改文件名。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427142017097.png">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427142040240.png">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427150906142.png">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427150942162.png">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427151218654.png">
-<meta property="og:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427151326410.png">
-<meta property="article:published_time" content="2022-04-27T05:47:04.000Z">
-<meta property="article:modified_time" content="2022-04-28T07:10:42.440Z">
+<meta property="og:image" content="https://qiuer222.github.io/image-20220428151538030.png">
+<meta property="og:image" content="https://qiuer222.github.io/image-20220428152444675.png">
+<meta property="og:image" content="https://qiuer222.github.io/image-20220428152338056.png">
+<meta property="og:image" content="https://qiuer222.github.io/image-20220428152614856.png">
+<meta property="article:published_time" content="2022-04-28T07:12:25.000Z">
+<meta property="article:modified_time" content="2022-04-28T07:52:46.283Z">
 <meta property="article:author" content="qiuer">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="RSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://qiuer222.github.io/2022/04/27/BuildaBlog/image-20220427142017097.png">
+<meta name="twitter:image" content="https://qiuer222.github.io/image-20220428151538030.png">
 
-<link rel="canonical" href="https://qiuer222.github.io/2022/04/27/BuildaBlog/">
+<link rel="canonical" href="https://qiuer222.github.io/2022/04/28/hexo-pic/">
 
 
 <script id="page-configurations">
@@ -52,7 +49,7 @@
   };
 </script>
 
-  <title>My Blog(1)--使用Hexo+GithubPage搭建博客+邮箱推送！ | qiuer222</title>
+  <title>Hexo页面插入文档 | qiuer222</title>
   
 
 
@@ -174,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qiuer222.github.io/2022/04/27/BuildaBlog/">
+    <link itemprop="mainEntityOfPage" href="https://qiuer222.github.io/2022/04/28/hexo-pic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/bio-photo.jpg">
@@ -187,7 +184,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          My Blog(1)--使用Hexo+GithubPage搭建博客+邮箱推送！
+          Hexo页面插入文档
         </h1>
 
         <div class="post-meta">
@@ -196,16 +193,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-04-27 13:47:04" itemprop="dateCreated datePublished" datetime="2022-04-27T13:47:04+08:00">2022-04-27</time>
+              <time title="Created: 2022-04-28 15:12:25 / Modified: 15:52:46" itemprop="dateCreated datePublished" datetime="2022-04-28T15:12:25+08:00">2022-04-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-04-28 15:10:42" itemprop="dateModified" datetime="2022-04-28T15:10:42+08:00">2022-04-28</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -228,49 +219,37 @@
 
       
         <hr>
-<p>记录一下以next为模板的搭建过程和rss、邮箱推送功能的增加</p>
+<p>使用Hexo时如何在文档内插入图片，参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852">HEXO插入图片（详细版） - 简书 (jianshu.com)</a>，但是做了一些改动！使用Typora的时候可以直接把图贴进来，不用费力去改文件名。</p>
 <span id="more"></span>
 
-<h2 id="最基础的landscape"><a href="#最基础的landscape" class="headerlink" title="最基础的landscape"></a>最基础的landscape</h2><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">Hexo</a></p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程</a></p>
-<p>没什么坑，github新建库，Git+Node.js安装，关联github账户</p>
-<h2 id="更换一个主题"><a href="#更换一个主题" class="headerlink" title="更换一个主题"></a>更换一个主题</h2><p>（第一个选择的<a target="_blank" rel="noopener" href="https://github.com/tufu9441/maupassant-hexo">模板</a>需要node-sass搞了很久搞不成，遂放弃，用一个大众的模板好处在于有更好的支持文档……没必要在搭建上花这么多时间，重点是内容对吧）</p>
-<p>使用next，参考：<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html">开始使用 - NexT 使用文档 (iissnan.com)</a></p>
-<p>修改_config.yml文件等等</p>
-<p>测试了图片和公式</p>
-<p>图片：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852">HEXO插入图片</a></p>
-<p>第15行的+1删咯！typora设置改改，就可以直接复制图片进来咯！</p>
-<p>本地编辑时在typora前加图像根目录，编辑好了就删一行，这样上传网页可以看见图片（但是本地编辑器看不到了），不过既然已经编辑好了那么也不重要了对吧:blush:</p>
-<p>这样好像每次都要更新图片，如果文档多起来可能会有耗时间的问题，到时候再看吧！</p>
-<p>公式需要安装hexo-filter-mathjax，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45511189/article/details/115798563">hexo博客next主题添加对数学公式的支持</a></p>
-<h2 id="rss"><a href="#rss" class="headerlink" title="rss"></a>rss</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2aaac7a19736">Hexo博客配置RSS插件</a></p>
-<p>修改themes/next里的_config.yml和根目录下的 _config.yml文件</p>
-<p>由于自己在用zotero，所以直接在zotero上添加订阅，复制url</p>
-<p><img src="/2022/04/27/BuildaBlog/image-20220427142017097.png" alt="image-20220427142017097"></p>
-<p><img src="/2022/04/27/BuildaBlog/image-20220427142040240.png" alt="image-20220427142040240"></p>
-<p>好耶！</p>
-<p>但是考虑大多数人手头可能没有现成的可以阅读rss的软件，于是——</p>
-<h2 id="Newsletter"><a href="#Newsletter" class="headerlink" title="Newsletter"></a>Newsletter</h2><p>这和博客的主体并没有太大相关，只不过是一个推送的方式，和公众号微博twitter并没有什么本质区别……</p>
-<p>参考：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/119325491">零成本搭建现代博客之订阅推送篇</a></p>
-<p>注册啦啥啦很常规</p>
-<p>在博客上贴上订阅链接，在next文件夹下的_config.yml文件里找到social：这一部分，加入下面这行，”url”替换为你的订阅链接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  Newsletter: url || fa fa-bell</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo的设置"><a href="#Hexo的设置" class="headerlink" title="Hexo的设置"></a>Hexo的设置</h2><ol>
+<li>安装插件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2022/04/27/BuildaBlog/image-20220427150906142.png" alt="image-20220427150906142"></p>
-<p>叮叮，图标出现啦，点开看看！</p>
-<p><img src="/2022/04/27/BuildaBlog/image-20220427150942162.png" alt="image-20220427150942162"></p>
-<p>用自己的邮箱试了试先，来发送一个hello world</p>
-<p><img src="/2022/04/27/BuildaBlog/image-20220427151218654.png" alt="image-20220427151218654"></p>
-<p>发送！</p>
-<p>糟了，进spam了…………悲！不懂是不是gmail的过滤器太严格，不加链接也会被识别为垃圾</p>
-<p><img src="/2022/04/27/BuildaBlog/image-20220427151326410.png" alt="image-20220427151326410"></p>
-<p>但是仍然可以用它来收集subscriber的邮箱信息:cry:页面还挺好看啦</p>
-<p>一些待尝试的选项：</p>
-<p><a target="_blank" rel="noopener" href="https://www.getrevue.co/">revue</a>这个好像没有进垃圾箱的问题……好耶！</p>
-<p>页面有点丑陋但是没关系！</p>
-<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1622392">Hexo博客订阅文章通知功能 - 云+社区 - 腾讯云 (tencent.com)</a></p>
-<h2 id="还有一个问题"><a href="#还有一个问题" class="headerlink" title="还有一个问题"></a>还有一个问题</h2><p>tags页面不能选择多个以筛选（那和category有什么区别啊！）</p>
-<p>之前的美貌jeklly模板是可以的:disappointed_relieved:</p>
+<ol start="2">
+<li>修改配置文件</li>
+</ol>
+<p>_config.yml中找到post_asset_folder，选项改成true</p>
+<p>修改这项可以在使用hexo new filename的时候同时新建一个同名的文件夹用于储存图片；</p>
+<ol start="3">
+<li>修改插件代码</li>
+</ol>
+<p>打开/node_mudules/hexo-asset-image/index.js</p>
+<p>替换为以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line">var cheerio = require(&#x27;cheerio&#x27;);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line">function getPosition(str, m, i) &#123;</span><br><span class="line">  return str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(&#x27;.&#x27;);</span><br><span class="line">hexo.extend.filter.register(&#x27;after_post_render&#x27;, function(data)&#123;</span><br><span class="line">  var config = hexo.config;</span><br><span class="line">  if(config.post_asset_folder)&#123;</span><br><span class="line">        var link = data.permalink;</span><br><span class="line">    if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 1) + 1;</span><br><span class="line">    else</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 3) + 1;</span><br><span class="line">    // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span><br><span class="line">    var endPos = link.lastIndexOf(&#x27;/&#x27;) +1;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [&#x27;excerpt&#x27;, &#x27;more&#x27;, &#x27;content&#x27;];</span><br><span class="line">    for(var i = 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      var key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      var $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: false,</span><br><span class="line">        xmlMode: false,</span><br><span class="line">        lowerCaseTags: false,</span><br><span class="line">        decodeEntities: false</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(&#x27;img&#x27;).each(function()&#123;</span><br><span class="line">        if ($(this).attr(&#x27;src&#x27;))&#123;</span><br><span class="line">            // For windows style path, we replace &#x27;\&#x27; to &#x27;/&#x27;.</span><br><span class="line">            var src = $(this).attr(&#x27;src&#x27;).replace(&#x27;\\&#x27;, &#x27;/&#x27;);</span><br><span class="line">            if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;</span><br><span class="line">               !/^\s*\//.test(src)) &#123;</span><br><span class="line">              // For &quot;about&quot; page, the first part of &quot;src&quot; can&#x27;t be removed.</span><br><span class="line">              // In addition, to support multi-level local directory.</span><br><span class="line">              var linkArray = link.split(&#x27;/&#x27;).filter(function(elem)&#123;</span><br><span class="line">                return elem != &#x27;&#x27;;</span><br><span class="line">              &#125;);</span><br><span class="line">              var srcArray = src.split(&#x27;/&#x27;).filter(function(elem)&#123;</span><br><span class="line">                return elem != &#x27;&#x27; &amp;&amp; elem != &#x27;.&#x27;;</span><br><span class="line">              &#125;);</span><br><span class="line">              if(srcArray.length &gt; 1)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(&#x27;/&#x27;);</span><br><span class="line">              src = src.substring(3);</span><br><span class="line">              $(this).attr(&#x27;src&#x27;, config.root + link + src);</span><br><span class="line">              console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span><br><span class="line">            console.info&amp;&amp;console.info($(this));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这里和参考网页上不一样，Typora文件内图像的相对路径最前面有一个”/“，不修改代码删除这个斜杠的话就要手动一个一个删改，比较麻烦。</p>
+<h2 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h2><p>文件-偏好-图像，选择复制到指定位置（同名文件夹），优先使用相对路径；</p>
+<p><img src="/image-20220428151538030.png" alt="image-20220428151538030"></p>
+<p>每次新建.md文件开始编写的时候，选择格式-图像-设置图片根目录，选择同名文件夹；</p>
+<p><img src="/image-20220428152444675.png" alt="image-20220428152444675"></p>
+<p>这个时候，复制截图进来，链接就像这样：</p>
+<p><img src="/image-20220428152338056.png" alt="image-20220428152338056"></p>
+<p>写好准备发布时，要把最上面的根目录删掉，typora-root-url这一行。</p>
+<p>（either在本地编辑器中可以看到图片or在网页上可以看到图片……）</p>
+<p><img src="/image-20220428152614856.png" alt="image-20220428152614856"></p>
+<p>好啦，可以安心地hexo d啦！</p>
 
     </div>
 
@@ -311,7 +290,6 @@
           
           <div class="post-tags">
               <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-              <a href="/tags/RSS/" rel="tag"><i class="fa fa-tag"></i> RSS</a>
           </div>
 
         
@@ -320,13 +298,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/04/23/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2022/04/27/BuildaBlog/" rel="prev" title="My Blog(1)--使用Hexo+GithubPage搭建博客+邮箱推送！">
+      <i class="fa fa-chevron-left"></i> My Blog(1)--使用Hexo+GithubPage搭建博客+邮箱推送！
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/04/28/hexo-pic/" rel="next" title="Hexo页面插入文档">
-      Hexo页面插入文档 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -385,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%9F%BA%E7%A1%80%E7%9A%84landscape"><span class="nav-number">1.</span> <span class="nav-text">最基础的landscape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%80%E4%B8%AA%E4%B8%BB%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">更换一个主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rss"><span class="nav-number">3.</span> <span class="nav-text">rss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Newsletter"><span class="nav-number">4.</span> <span class="nav-text">Newsletter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%9C%89%E4%B8%80%E4%B8%AA%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">还有一个问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Hexo的设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Typora%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Typora设置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
