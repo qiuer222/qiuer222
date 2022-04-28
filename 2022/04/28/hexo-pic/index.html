@@ -30,9 +30,10 @@
 <meta property="og:image" content="https://qiuer222.github.io/2022/04/28/hexo-pic/image-20220428152338056.png">
 <meta property="og:image" content="https://qiuer222.github.io/2022/04/28/hexo-pic/image-20220428152614856.png">
 <meta property="article:published_time" content="2022-04-28T07:12:25.000Z">
-<meta property="article:modified_time" content="2022-04-28T08:55:11.987Z">
+<meta property="article:modified_time" content="2022-04-28T12:02:31.296Z">
 <meta property="article:author" content="qiuer">
 <meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://qiuer222.github.io/2022/04/28/hexo-pic/image-20220428151538030.png">
 
@@ -195,7 +196,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-04-28 15:12:25 / Modified: 16:55:11" itemprop="dateCreated datePublished" datetime="2022-04-28T15:12:25+08:00">2022-04-28</time>
+              <time title="Created: 2022-04-28 15:12:25 / Modified: 20:02:31" itemprop="dateCreated datePublished" datetime="2022-04-28T15:12:25+08:00">2022-04-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -221,21 +222,24 @@
         <hr>
 <p>使用Hexo时如何在文档内插入图片，参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f72aaad7b852">HEXO插入图片（详细版） - 简书 (jianshu.com)</a>，但是做了一些改动！使用Typora的时候可以直接把图贴进来，不用费力去改文件名。</p>
 <span id="more"></span>
+
 <h2 id="Hexo的设置"><a href="#Hexo的设置" class="headerlink" title="Hexo的设置"></a>Hexo的设置</h2><ol>
 <li>安装插件</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="2">
 <li>修改配置文件</li>
 </ol>
 <p>_config.yml中找到post_asset_folder，选项改成true</p>
 <p>修改这项可以在使用hexo new filename的时候同时新建一个同名的文件夹用于储存图片；</p>
-<ol>
+<ol start="3">
 <li>修改插件代码</li>
 </ol>
 <p>打开/node_mudules/hexo-asset-image/index.js</p>
 <p>替换为以下代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&#x27;use strict&#x27;;</span><br><span class="line">var cheerio = require(&#x27;cheerio&#x27;);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line">function getPosition(str, m, i) &#123;</span><br><span class="line">  return str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(&#x27;.&#x27;);</span><br><span class="line">hexo.extend.filter.register(&#x27;after_post_render&#x27;, function(data)&#123;</span><br><span class="line">  var config = hexo.config;</span><br><span class="line">  if(config.post_asset_folder)&#123;</span><br><span class="line">        var link = data.permalink;</span><br><span class="line">    if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 1) + 1;</span><br><span class="line">    else</span><br><span class="line">       var beginPos = getPosition(link, &#x27;/&#x27;, 3) + 1;</span><br><span class="line">    // In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span><br><span class="line">    var endPos = link.lastIndexOf(&#x27;/&#x27;) +1;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [&#x27;excerpt&#x27;, &#x27;more&#x27;, &#x27;content&#x27;];</span><br><span class="line">    for(var i = 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      var key = toprocess[i];</span><br><span class="line"> </span><br><span class="line">      var $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: false,</span><br><span class="line">        xmlMode: false,</span><br><span class="line">        lowerCaseTags: false,</span><br><span class="line">        decodeEntities: false</span><br><span class="line">      &#125;);</span><br><span class="line"></span><br><span class="line">      $(&#x27;img&#x27;).each(function()&#123;</span><br><span class="line">        if ($(this).attr(&#x27;src&#x27;))&#123;</span><br><span class="line">            // For windows style path, we replace &#x27;\&#x27; to &#x27;/&#x27;.</span><br><span class="line">            var src = $(this).attr(&#x27;src&#x27;).replace(&#x27;\\&#x27;, &#x27;/&#x27;);</span><br><span class="line">            if(!/http[s]*.*|\/\/.*/.test(src) ) &#123;</span><br><span class="line">              // For &quot;about&quot; page, the first part of &quot;src&quot; can&#x27;t be removed.</span><br><span class="line">              // In addition, to support multi-level local directory.</span><br><span class="line">              var linkArray = link.split(&#x27;/&#x27;).filter(function(elem)&#123;</span><br><span class="line">                return elem != &#x27;&#x27;;</span><br><span class="line">              &#125;);</span><br><span class="line">              var srcArray = src.split(&#x27;/&#x27;).filter(function(elem)&#123;</span><br><span class="line">                return elem != &#x27;&#x27; &amp;&amp; elem != &#x27;.&#x27;;</span><br><span class="line">              &#125;);</span><br><span class="line">              if(srcArray.length &gt; 1)</span><br><span class="line">                srcArray.shift();</span><br><span class="line">              src = srcArray.join(&#x27;/&#x27;);</span><br><span class="line"></span><br><span class="line">              $(this).attr(&#x27;src&#x27;, config.root + link + src);</span><br><span class="line">              //console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span><br><span class="line">            console.info&amp;&amp;console.info($(this));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>和参考网页上有点不一样，Typora文件内图像的相对路径最前面有一个”/“，参考链接里的判断条件怪怪的。</p>
 <h2 id="Typora设置"><a href="#Typora设置" class="headerlink" title="Typora设置"></a>Typora设置</h2><p>文件-偏好-图像，选择复制到指定位置（同名文件夹），优先使用相对路径；</p>
 <p><img src="/2022/04/28/hexo-pic/image-20220428151538030.png" alt="image-20220428151538030"></p>
@@ -287,6 +291,7 @@
           
           <div class="post-tags">
               <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
           </div>
 
         
@@ -386,7 +391,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
