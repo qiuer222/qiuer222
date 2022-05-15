@@ -3,15 +3,22 @@
 
 
     <url>
-        <loc>https://qiuer222.github.io/tags/NexT/</loc>
-        <lastmod>2022-04-28T12:02:31.296Z</lastmod>
+        <loc>https://qiuer222.github.io/tags/Hexo/</loc>
+        <lastmod>2022-05-15T13:38:47.156Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://qiuer222.github.io/tags/Hexo/</loc>
-        <lastmod>2022-04-28T12:02:31.296Z</lastmod>
+        <loc>https://qiuer222.github.io/tags/NexT/</loc>
+        <lastmod>2022-05-15T12:53:12.419Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/tags/hello/</loc>
+        <lastmod>2022-05-15T12:51:25.792Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -19,13 +26,6 @@
     <url>
         <loc>https://qiuer222.github.io/tags/RSS/</loc>
         <lastmod>2022-04-28T12:02:10.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/hello/</loc>
-        <lastmod>2022-04-28T08:08:28.353Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

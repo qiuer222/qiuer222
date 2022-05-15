@@ -9,24 +9,40 @@
 
 
     <url>
-        <loc>https://qiuer222.github.io/hexo-pic/</loc>
-        <lastmod>2022-04-28T12:02:31.296Z</lastmod>
+        <loc>https://qiuer222.github.io/Hexo/hexo-func/</loc>
+        <lastmod>2022-05-15T13:38:47.156Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://qiuer222.github.io/BuildaBlog/</loc>
+        <loc>https://qiuer222.github.io/undefined/test/</loc>
+        <lastmod>2022-05-15T13:04:45.470Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/undefined/hexo-pic/</loc>
+        <lastmod>2022-05-15T12:53:12.419Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/test/hello-world/</loc>
+        <lastmod>2022-05-15T12:51:25.792Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/undefined/BuildaBlog/</loc>
         <lastmod>2022-04-28T12:02:10.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/hello-world/</loc>
-        <lastmod>2022-04-28T08:08:28.353Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
