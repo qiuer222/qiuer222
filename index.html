@@ -353,7 +353,7 @@ mjx-container[display="true"] + br {
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://qiuer222.github.io/undefined/test/">
+    <link itemprop="mainEntityOfPage" href="https://qiuer222.github.io/undefined/gurobi1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/bio-photo.jpg">
@@ -368,7 +368,7 @@ mjx-container[display="true"] + br {
         <h2 class="post-title" itemprop="name headline">
           
           
-            <a href="/undefined/test/" class="post-title-link" itemprop="url">test</a>
+            <a href="/undefined/gurobi1/" class="post-title-link" itemprop="url">整数优化求解器使用之路</a>
         </h2>
 
         <div class="post-meta">
@@ -379,7 +379,16 @@ mjx-container[display="true"] + br {
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-05-15 21:03:59 / Modified: 21:04:45" itemprop="dateCreated datePublished" datetime="2022-05-15T21:03:59+08:00">2022-05-15</time>
+              <time title="Created: 2023-12-18 20:32:35 / Modified: 20:37:51" itemprop="dateCreated datePublished" datetime="2023-12-18T20:32:35+08:00">2023-12-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/research/" itemprop="url" rel="index"><span itemprop="name">research</span></a>
+                </span>
             </span>
 
           
@@ -393,7 +402,23 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>sth</p>
+          <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去gurobi官网申请学术许可</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42477413/article/details/110119977">gurobi+matlab 简单QP例子-CSDN博客</a>一个简单的例子</p>
+<p>目前看到的例子中，目标函数只能是一次或者二次，obj中能不能有高次项？<a target="_blank" rel="noopener" href="https://blog.csdn.net/HsinglukLiu/article/details/120204112">Gurobi处理非线性目标函数和约束的详细案例-CSDN博客</a>提到的辅助变量能不能在目标函数中出现？</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/631879265">MATLAB+Gurobi+Yalmip安装和使用教程 - 知乎 (zhihu.com)</a>正在使用r2018b，应该是旧版本的yalmip和最新的gurobi不兼容，开始下载新的matlab</p>
+<p><img src="/undefined/gurobi1/image-20231206095216351.png" alt="image-20231206095216351"></p>
+<p>配置完成</p>
+<h2 id="开始优化"><a href="#开始优化" class="headerlink" title="开始优化"></a>开始优化</h2><p>问题包含满秩整数矩阵约束，功率分配矩阵行列式等于1的约束</p>
+<p>使用trace作为目标函数，约束条件prod(d)==1，大失败</p>
+<p><img src="/undefined/gurobi1/image-20231206104138430.png" alt="image-20231206104138430"></p>
+<p>满秩约束不能在求解器中直接用，令人头疼，对rank的约束只能用在对称变量上，而且只有LMIRANK支持</p>
+<p><img src="/undefined/gurobi1/image-20231207205820448.png" alt="image-20231207205820448"></p>
+<p>下载了LMIRANK，但是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Solver not applicable (lmirank does not support polynomial terms in objective)</span><br></pre></td></tr></table></figure>
+
+<h2 id="转换思路"><a href="#转换思路" class="headerlink" title="转换思路"></a>转换思路</h2><p>尝试把满秩换成行列式大于零，在二阶可以写成二次约束，可以运行但是效果一般（很一般）</p>
+<p><img src="/undefined/gurobi1/image-20231207211825276.png" alt="image-20231207211825276"></p>
+<p>三阶以的多项式约束就infeasible了TT</p>
 
       
     </div>
@@ -737,13 +762,13 @@ mjx-container[display="true"] + br {
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -780,8 +805,8 @@ mjx-container[display="true"] + br {
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2022</span>
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-anchor"></i>
   </span>
