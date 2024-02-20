@@ -6,7 +6,7 @@
   <link href="https://qiuer222.github.io/atom.xml" rel="self"/>
   
   <link href="https://qiuer222.github.io/"/>
-  <updated>2023-12-18T12:37:51.250Z</updated>
+  <updated>2024-02-20T01:56:56.076Z</updated>
   <id>https://qiuer222.github.io/</id>
   
   <author>
@@ -17,27 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>整数优化求解器使用之路</title>
-    <link href="https://qiuer222.github.io/undefined/gurobi1/"/>
-    <id>https://qiuer222.github.io/undefined/gurobi1/</id>
-    <published>2023-12-18T12:32:35.000Z</published>
-    <updated>2023-12-18T12:37:51.250Z</updated>
+    <title>ResponseLetter</title>
+    <link href="https://qiuer222.github.io/undefined/ResponseLetter/"/>
+    <id>https://qiuer222.github.io/undefined/ResponseLetter/</id>
+    <published>2024-02-20T01:49:45.000Z</published>
+    <updated>2024-02-20T01:56:56.076Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去gurobi官网申请学术许可</p><p><a href="https://blog.csdn.net/qq_42477413/article/details/110119977">gurobi+matlab 简单QP例子-CSDN博客</a>一个简单的例子</p><p>目前看到的例子中，目标函数只能是一次或者二次，obj中能不能有高次项？<a href="https://blog.csdn.net/HsinglukLiu/article/details/120204112">Gurobi处理非线性目标函数和约束的详细案例-CSDN博客</a>提到的辅助变量能不能在目标函数中出现？</p><p><a href="https://zhuanlan.zhihu.com/p/631879265">MATLAB+Gurobi+Yalmip安装和使用教程 - 知乎 (zhihu.com)</a>正在使用r2018b，应该是旧版本的yalmip和最新的gurobi不兼容，开始下载新的matlab</p><p><img src="/undefined/gurobi1/image-20231206095216351.png" alt="image-20231206095216351"></p><p>配置完成</p><h2 id="开始优化"><a href="#开始优化" class="headerlink" title="开始优化"></a>开始优化</h2><p>问题包含满秩整数矩阵约束，功率分配矩阵行列式等于1的约束</p><p>使用trace作为目标函数，约束条件prod(d)==1，大失败</p><p><img src="/undefined/gurobi1/image-20231206104138430.png" alt="image-20231206104138430"></p><p>满秩约束不能在求解器中直接用，令人头疼，对rank的约束只能用在对称变量上，而且只有LMIRANK支持</p><p><img src="/undefined/gurobi1/image-20231207205820448.png" alt="image-20231207205820448"></p><p>下载了LMIRANK，但是：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Solver not applicable (lmirank does not support polynomial terms in objective)</span><br></pre></td></tr></table></figure><h2 id="转换思路"><a href="#转换思路" class="headerlink" title="转换思路"></a>转换思路</h2><p>尝试把满秩换成行列式大于零，在二阶可以写成二次约束，可以运行但是效果一般（很一般）</p><p><img src="/undefined/gurobi1/image-20231207211825276.png" alt="image-20231207211825276"></p><p>三阶以的多项式约束就infeasible了TT</p>]]></content>
+    <content type="html"><![CDATA[<p>第一次投稿获得了Reject and Resubmission Allowed的结果，ddl战士在截止日期最后一天完成了Response Letter的写作。年前和导师讨论的过程中发现文章其实还有可以提升的地方，但是时间不够了，尝试给编辑发邮件请求延期但是没有收到回复，遂只能在初三就开始打开电脑继续修改，占用了导师的春节假期本人实在是愧疚万分！</p><span id="more"></span><h1 id="Response-letter-写作"><a href="#Response-letter-写作" class="headerlink" title="Response letter 写作"></a>Response letter 写作</h1><p>关键的几点：</p><ul><li>point-to-point，每一个问题都要回答</li><li>没问到的不用多说，避免把问题扩大</li><li>态度端正，语气诚恳</li></ul><h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Comment 1</strong> <em>The motivation for studying lattice codes is narrowly discussed. Many nested lattice code designs are missing from references.</em></p><p>（可以使用不同的字体来区分comment和reply）</p><p><strong>Reply</strong>: Now we realize that the motivation of studying lattice codes was not made clear enough in the previous version. </p><p>（没解释清楚可以用”Now we realize…”，如果是指出错误可以用”We regret for the mistake…”，如果觉得reviewer提的意见有问题就用”The reviewer raised a relevant question”）</p><p>The motivation for this work stems from the recognized benefits of lattice codes in multi-user communication that exploit the notion of physical-layer network coding (PNC) or compute-forward (CF). By adopting lattice-codes at source nodes, the receiver can directly compute integer-combinations of the users’ messages, leading to an efficient harnessing of the multiuser interference structure [R1]. </p><p>…</p><p>（做出详细的解释说明，reviewer提到的每一个点都要回答，一定要保持逻辑性！）</p><p>In the revised version, the motivations for studying practical nested lattice codes are further clarified on page 1, quoted below: </p><p>（修改的地方要进行引用，只引用相关部分！）</p><table><thead><tr><th>“In comparison to off-the-shelf channel codes and widely known digital modulation schemes, …”</th></tr></thead></table><p>[R1] Bobak Nazer and Michael Gastpar, “Compute-and-Forward: Harnessing Interference Through Structured Codes”, IEEE Transactions on Information Theory 57, pp. 6463–6486, Oct.2011.</p><p>（文章中没有的或者新加的reference在这里写明）</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;先去gurobi官网申请学术许可&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/qq_42477413/art</summary>
-      
+    <summary type="html">&lt;p&gt;第一次投稿获得了Reject and Resubmission Allowed的结果，ddl战士在截止日期最后一天完成了Response Letter的写作。年前和导师讨论的过程中发现文章其实还有可以提升的地方，但是时间不够了，尝试给编辑发邮件请求延期但是没有收到回复，遂只能在初三就开始打开电脑继续修改，占用了导师的春节假期本人实在是愧疚万分！&lt;/p&gt;</summary>
     
     
     
     <category term="research" scheme="https://qiuer222.github.io/categories/research/"/>
     
     
-    <category term="math optimization" scheme="https://qiuer222.github.io/tags/math-optimization/"/>
+    <category term="writing" scheme="https://qiuer222.github.io/tags/writing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>整数优化求解器使用之路</title>
+    <link href="https://qiuer222.github.io/undefined/gurobi1/"/>
+    <id>https://qiuer222.github.io/undefined/gurobi1/</id>
+    <published>2023-12-18T12:32:35.000Z</published>
+    <updated>2023-12-18T13:48:13.991Z</updated>
+    
+    <content type="html"><![CDATA[<p>尝试使用Gurobi对目前的问题进行求解。（失败！）</p><span id="more"></span><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去gurobi官网申请学术许可</p><p><a href="https://blog.csdn.net/qq_42477413/article/details/110119977">gurobi+matlab 简单QP例子-CSDN博客</a>一个简单的例子</p><p>目前看到的例子中，目标函数只能是一次或者二次，obj中能不能有高次项？<a href="https://blog.csdn.net/HsinglukLiu/article/details/120204112">Gurobi处理非线性目标函数和约束的详细案例-CSDN博客</a>提到的辅助变量能不能在目标函数中出现？</p><p><a href="https://zhuanlan.zhihu.com/p/631879265">MATLAB+Gurobi+Yalmip安装和使用教程 - 知乎 (zhihu.com)</a>正在使用r2018b，应该是旧版本的yalmip和最新的gurobi不兼容，开始下载新的matlab</p><p><img src="/undefined/gurobi1/image-20231206095216351.png" alt="image-20231206095216351"></p><p>配置完成</p><h2 id="开始优化"><a href="#开始优化" class="headerlink" title="开始优化"></a>开始优化</h2><p>问题包含满秩整数矩阵约束，功率分配矩阵行列式等于1的约束</p><p>使用trace作为目标函数，约束条件prod(d)==1，大失败</p><p><img src="/undefined/gurobi1/image-20231206104138430.png" alt="image-20231206104138430"></p><p>满秩约束不能在求解器中直接用，令人头疼，对rank的约束只能用在对称变量上，而且只有LMIRANK支持</p><p><img src="/undefined/gurobi1/image-20231207205820448.png" alt="image-20231207205820448"></p><p>下载了LMIRANK，但是：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Solver not applicable (lmirank does not support polynomial terms in objective)</span><br></pre></td></tr></table></figure><h2 id="转换思路"><a href="#转换思路" class="headerlink" title="转换思路"></a>转换思路</h2><p>尝试把满秩换成行列式大于零，在二阶可以写成二次约束，可以运行但是效果一般（很一般）</p><p><img src="/undefined/gurobi1/image-20231207211825276.png" alt="image-20231207211825276"></p><p>三阶以的多项式约束就infeasible了TT</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;尝试使用Gurobi对目前的问题进行求解。（失败！）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="research" scheme="https://qiuer222.github.io/categories/research/"/>
+    
+    <category term="optimization" scheme="https://qiuer222.github.io/categories/research/optimization/"/>
+    
+    
+    <category term="math" scheme="https://qiuer222.github.io/tags/math/"/>
+    
+    <category term="optimization" scheme="https://qiuer222.github.io/tags/optimization/"/>
     
   </entry>
   
