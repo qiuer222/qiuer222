@@ -4,49 +4,42 @@
 
     <url>
         <loc>https://qiuer222.github.io/tags/writing/</loc>
-        <lastmod>2024-02-20T01:56:56.076Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/optimization/</loc>
-        <lastmod>2023-12-18T13:48:13.991Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/math/</loc>
-        <lastmod>2023-12-18T13:48:13.991Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/Hexo/</loc>
-        <lastmod>2022-05-15T13:38:47.156Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/NexT/</loc>
-        <lastmod>2022-05-15T12:53:12.419Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://qiuer222.github.io/tags/hello/</loc>
-        <lastmod>2022-05-15T12:51:25.792Z</lastmod>
+        <lastmod>2024-02-20T02:08:55.759Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://qiuer222.github.io/tags/RSS/</loc>
-        <lastmod>2022-04-28T12:02:10.927Z</lastmod>
+        <lastmod>2024-02-20T02:05:34.027Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/tags/NexT/</loc>
+        <lastmod>2024-02-20T02:05:34.027Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/tags/Hexo/</loc>
+        <lastmod>2024-02-20T02:05:34.027Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/tags/optimization/</loc>
+        <lastmod>2024-02-20T02:04:46.864Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://qiuer222.github.io/tags/math/</loc>
+        <lastmod>2024-02-20T02:04:46.864Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
