@@ -225,18 +225,14 @@
         <p>给博客添一些新东西……</p>
 <p>置顶功能</p>
 <span id="more"></span>
-
 <h2 id="置顶"><a href="#置顶" class="headerlink" title="置顶"></a>置顶</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a5d85680722e">参考1 </a>，<a target="_blank" rel="noopener" href="https://www.itfanr.cc/2019/09/05/hexo-top-optimize/">参考2 </a></p>
 <p>目录中找到<code>/themes/next/layout/_macro/post.swig</code></p>
 <p>搜索如下一行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;# Link posts #&#125;</span><br></pre></td></tr></table></figure>
-
 <p>在这一行前添加：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;&lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-
 <p>这一部分完整为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">     &lt;header class=&quot;post-header&quot;&gt;   </span><br><span class="line">       &lt;&#123;%- if is_index %&#125;h2&#123;% else %&#125;h1&#123;%- endif %&#125; class=&quot;post-title&#123;%- if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;%- endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">         &#123;% if post.top %&#125;&lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;&#123;% endif %&#125;</span><br><span class="line">         &#123;# Link posts #&#125;</span><br><span class="line">         &#123;%- if post.link %&#125;</span><br><span class="line">         ...</span><br></pre></td></tr></table></figure>
-
 
     </div>
 
