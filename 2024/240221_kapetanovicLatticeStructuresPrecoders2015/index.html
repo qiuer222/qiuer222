@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/bio-photo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/bio-photo.jpg">
+  <meta name="google-site-verification" content="3s3IY_Rfsu2mxHwEPOrLembi1_m2EYDsK37DsaUpgzE">
+  <meta name="msvalidate.01" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"qiuer222.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Reading “Lattice Structures of Precoders Maximizing the Minimum Distance in Linear Channels”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading(1)_kapetanovicLatticeStructuresPrecoders2015">
+<meta property="og:url" content="https://qiuer222.github.io/2024/240221_kapetanovicLatticeStructuresPrecoders2015/index.html">
+<meta property="og:site_name" content="qiuer222">
+<meta property="og:description" content="Reading “Lattice Structures of Precoders Maximizing the Minimum Distance in Linear Channels”">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://qiuer222.github.io/image-20240221163324182.png">
+<meta property="article:published_time" content="2024-02-21T02:16:53.000Z">
+<meta property="article:modified_time" content="2024-08-30T15:21:32.149Z">
+<meta property="article:author" content="qiuer">
+<meta property="article:tag" content="optimization">
+<meta property="article:tag" content="reading">
+<meta property="article:tag" content="lattice">
+<meta property="article:tag" content="precoding">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://qiuer222.github.io/image-20240221163324182.png">
+
+<link rel="canonical" href="https://qiuer222.github.io/2024/240221_kapetanovicLatticeStructuresPrecoders2015/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Reading(1)_kapetanovicLatticeStructuresPrecoders2015 | qiuer222</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="qiuer222" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">qiuer222</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">personal blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://qiuer222.github.io/2024/240221_kapetanovicLatticeStructuresPrecoders2015/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bio-photo.jpg">
+      <meta itemprop="name" content="qiuer">
+      <meta itemprop="description" content="nonsense form nowhere">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qiuer222">
+    </span>
+      <header class="post-header">   
+        <h1 class="post-title" itemprop="name headline">
+          
+          Reading(1)_kapetanovicLatticeStructuresPrecoders2015
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-02-21 10:16:53" itemprop="dateCreated datePublished" datetime="2024-02-21T10:16:53+08:00">2024-02-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-08-30 23:21:32" itemprop="dateModified" datetime="2024-08-30T23:21:32+08:00">2024-08-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/research/" itemprop="url" rel="index"><span itemprop="name">research</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/research/optimization/" itemprop="url" rel="index"><span itemprop="name">optimization</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Reading “Lattice Structures of Precoders Maximizing the Minimum Distance in Linear Channels”</p>
+<span id="more"></span>
+<h2 id="Sec-II"><a href="#Sec-II" class="headerlink" title="Sec II"></a>Sec II</h2><p><strong>formulate the problem</strong></p>
+<script type="math/tex; mode=display">
+\begin{equation} \max _{ \mathbf {F} }D^{2}_{\min }( \mathbf {S} \mathbf {F}) \quad \text {subject to}~\mathrm {tr}( \mathbf {F} \mathbf {F} ^{\rm T}) \leq P_{0} \end{equation} \tag {1}</script><script type="math/tex; mode=display">
+\max_{\mathbf{F} }D_{\min}^{2}(\mathbf{S}\mathbf{F})/\mathrm{tr}(\mathbf{F}\mathbf{F}^{T})\quad\text{subject to}~\mathbf{F}\not=\mathbf{0}_{N\times N} \tag {2}</script><script type="math/tex; mode=display">
+\min_{\mathbf{F} }\mathrm{tr}(\mathbf{F}\mathbf{F}^{ {\rm T} })\quad\text{subject to}~D_{\min}^{2}(\mathbf{S}\mathbf{F})=1 \tag {3}</script><script type="math/tex; mode=display">
+\mathbf {G} \stackrel {\triangle }{=} \mathbf {F} ^{\rm T} \mathbf {S}^{2} \mathbf {F}</script><script type="math/tex; mode=display">
+\min_{\mathbf{F} }\mathrm{tr}(\mathbf{F}\mathbf{F}^{ {\rm T} })\quad\text{subject to}~\mathbf{e}^{ {\rm T} }\mathbf{G}\mathbf{e}\geq1\quad\forall\mathbf{e}\in\mathbb{Z}^{N}\backslash\{\mathbf{0}_{N}\} \tag {4}</script><p>$\mathbf{F}<em>{1}<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="3.731ex" height="1.595ex" role="img" focusable="false" viewbox="0 -694 1649 705"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"/></g><g data-mml-node="mi" transform="translate(529,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"/></g><g data-mml-node="mi" transform="translate(1129,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"/></g></g></g></svg></mjx-container>\mathbf{F}</em>{2}$ are solution of (1) and (2)</p>
+<p>we can always make  $\mathrm{tr}(\mathbf{F}<em>{2}\mathbf{F}</em>{2}^{ {\rm T} })=P_{0} $ by normalization</p>
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.339ex" xmlns="http://www.w3.org/2000/svg" width="2.626ex" height="1.878ex" role="img" focusable="false" viewbox="0 -680 1160.6 830"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/></g></g><g data-mml-node="TeXAtom" transform="translate(757,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g></g></g></g></g></svg></mjx-container> is solution of <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="2.891ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 1278 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(389,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"/></g><g data-mml-node="mo" transform="translate(889,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></p>
+<script type="math/tex; mode=display">
+D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})\geq D_{\min}^{2}(\mathbf{S}\mathbf{F}_{2})</script><script type="math/tex; mode=display">
+\mathrm{tr}(\mathbf{F}_{1}\mathbf{F}_{1}^{ {\rm T} })\leq P_{0}</script><script type="math/tex; mode=display">
+\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})}{\mathrm{tr}(\mathbf{F}_{1}\mathbf{F}_{1}^{ {\rm T} })}\geq\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})}{P_{0} }\geq\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{2})}{P_{0} }=\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{2})}{\mathrm{tr}(\mathbf{F}_{2}\mathbf{F}_{2}^{ {\rm T} })}</script><p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.339ex" xmlns="http://www.w3.org/2000/svg" width="2.626ex" height="1.878ex" role="img" focusable="false" viewbox="0 -680 1160.6 830"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/></g></g><g data-mml-node="TeXAtom" transform="translate(757,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g></g></g></g></svg></mjx-container> is solution of <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="2.891ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 1278 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="mn" transform="translate(389,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g><g data-mml-node="mo" transform="translate(889,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container></p>
+<script type="math/tex; mode=display">
+\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{2})}{\mathrm{tr}(\mathbf{F}_{2}\mathbf{F}_{2}^{ {\rm T} })}\geq\frac{D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})}{\mathrm{tr}(\mathbf{F}_{1}\mathbf{F}_{1}^{ {\rm T} })}</script><script type="math/tex; mode=display">
+D_{\min}^{2}(\mathbf{S}\mathbf{F}_{2})\geq\frac{\mathrm{tr}(\mathbf{F}_{2}\mathbf{F}_{2}^{ {\rm T} })}{\mathrm{tr}(\mathbf{F}_{1}\mathbf{F}_{1}^{ {\rm T} })}D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})\geq D_{\min}^{2}(\mathbf{S}\mathbf{F}_{1})</script><h2 id="Sec-III"><a href="#Sec-III" class="headerlink" title="Sec III"></a>Sec III</h2><ul>
+<li>orthogonal matrix <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.437ex" xmlns="http://www.w3.org/2000/svg" width="1.955ex" height="2.011ex" role="img" focusable="false" viewbox="0 -696 864 889"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D410" d="M64 339Q64 431 96 502T182 614T295 675T420 696Q469 696 481 695Q620 680 709 589T798 339Q798 255 768 184Q720 77 611 26L600 21Q635 -26 682 -26H696Q769 -26 769 0Q769 7 774 12T787 18Q805 18 805 -7V-13Q803 -64 785 -106T737 -171Q720 -183 697 -191Q687 -193 668 -193Q636 -193 613 -182T575 -144T552 -94T532 -27Q531 -23 530 -16T528 -6T526 -3L512 -5Q499 -7 477 -8T431 -10Q393 -10 382 -9Q238 8 151 97T64 339ZM326 80Q326 113 356 138T430 163Q492 163 542 100L553 86Q554 85 561 91T578 108Q637 179 637 330Q637 430 619 498T548 604Q500 641 425 641Q408 641 390 637T347 623T299 590T259 535Q226 469 226 338Q226 244 246 180T318 79L325 74Q326 74 326 80ZM506 58Q480 112 433 112Q412 112 395 104T378 77Q378 44 431 44Q480 44 506 58Z"/></g></g></g></g></svg></mjx-container> and unimodular matrix  <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.59ex" height="1.552ex" role="img" focusable="false" viewbox="0 -686 703 686"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z"/></g></g></g></g></svg></mjx-container> do not change <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.656ex" xmlns="http://www.w3.org/2000/svg" width="4.728ex" height="2.543ex" role="img" focusable="false" viewbox="0 -833.9 2089.7 1124"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"/></g><g data-mml-node="TeXAtom" transform="translate(861,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"/></g></g><g data-mml-node="TeXAtom" transform="translate(861,-290.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"/><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(833,0)"/><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(1111,0)"/></g></g></g></g></g></svg></mjx-container> of a lattice</li>
+</ul>
+<script type="math/tex; mode=display">
+D^{2}_{\min }( \mathbf {QLZ}) = D^{2}_{\min }( \mathbf {L})</script><ul>
+<li>turn the problem into a lattice-based problem formulation</li>
+</ul>
+<script type="math/tex; mode=display">
+\mathbf {F} = \mathbf {S}^{-1} \mathbf {UB}</script><script type="math/tex; mode=display">
+\min _{ \mathbf {U}, \mathbf {B} } \mathrm {tr}( \mathbf {B}{ ^{\rm T} } \mathbf {U}{ ^{\rm T} } \mathbf {S}^{-2} \mathbf {UB}) \quad \text {subject to}~\mathbf {G}_{ \mathbf {B} } \in \mathcal {R}_{1} \tag 5</script><ul>
+<li>the relationship with <strong>densest lattice packing problem</strong></li>
+</ul>
+<p>densest lattice packing lattice only minimizes the lower bound to the objective function, thus not guaranteeing that it is the optimum solution</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/3018616/trace-of-symmetric-matrix-equals-sum-eigenvalues">Trace of symmetric matrix equals sum of eigenvalues</a></li>
+</ul>
+<h2 id="Sec-IV"><a href="#Sec-IV" class="headerlink" title="Sec IV"></a>Sec IV</h2><script type="math/tex; mode=display">\mathbf {F} = \mathbf {S}^{-1} \mathbf {UB}$$,$\mathbf {B}=\mathbf{LZ}$
+
+- the solution to (5) is attained at the perfect lattices → $\mathbf L$ is an basis of the perfect lattice
+- given $\mathbf B$, the best $\mathbf U$ is solved
+
+optimize $\mathbf F$ →optimize $\mathbf B$→ optimize unimodular matrix $\mathbf {Z}$  
+
+## Sec V
+
+### upper bound
+
+- GMD algorithm
+
+<img src="/image-20240221163324182.png" alt="image-20240221163324182" style="zoom:50%;" /></script><p>\mathbf {B}<em>{\mathrm {gmd} } = \mathbf {W}</em>{\mathrm {gmd} } \mathbf {S} \mathbf {F}_{\mathrm {gmd} }</p>
+<script type="math/tex; mode=display">
+</script><p>D^{2}<em>{\min }( \mathbf {B}</em>{\mathrm {gmd} }) \geq \sqrt [N/2]{\det (S)}</p>
+<p>$$</p>
+<h2 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h2><ul>
+<li>将优化问题转换成格问题，从优化 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.638ex" height="1.538ex" role="img" focusable="false" viewbox="0 -680 724 680"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D405" d="M425 0L228 3Q63 3 51 0H39V62H147V618H39V680H644V676Q647 670 659 552T675 428V424H613Q613 433 605 477Q599 511 589 535T562 574T530 599T488 612T441 617T387 618H368H304V371H333Q389 373 411 390T437 468V488H499V192H437V212Q436 244 430 263T408 292T378 305T333 309H304V62H439V0H425Z"/></g></g></g></g></svg></mjx-container> 转换成优化<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex" xmlns="http://www.w3.org/2000/svg" width="8.024ex" height="1.738ex" role="img" focusable="false" viewbox="0 -686 3546.6 768"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D401" d="M720 510Q720 476 704 448T665 404T619 377T580 362L564 359L583 356Q602 353 632 342T690 312Q712 292 725 276Q752 235 752 189V183Q752 160 741 125Q698 18 547 2Q543 1 288 0H39V62H147V624H39V686H264H409Q502 686 542 681T624 655Q720 607 720 510ZM563 513Q563 553 548 578T518 611T486 622Q479 624 385 624H293V382H375Q458 383 467 385Q563 405 563 513ZM590 192Q590 307 505 329Q504 330 503 330L398 331H293V62H391H400H444Q496 62 528 75T580 131Q590 155 590 192Z"/></g></g><g data-mml-node="mo" transform="translate(1095.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2151.6,0)"><g data-mml-node="mi"><path data-c="1D40B" d="M643 285Q641 280 629 148T612 4V0H39V62H147V624H39V686H51Q75 683 228 683Q415 685 425 686H439V624H304V62H352H378Q492 62 539 138Q551 156 558 178T569 214T576 255T581 289H643V285Z"/><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z" transform="translate(692,0)"/></g></g></g></g></svg></mjx-container></li>
+<li>证明该问题是凹的，确定<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.566ex" height="1.552ex" role="img" focusable="false" viewbox="0 -686 692 686"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D40B" d="M643 285Q641 280 629 148T612 4V0H39V62H147V624H39V686H51Q75 683 228 683Q415 685 425 686H439V624H304V62H352H378Q492 62 539 138Q551 156 558 178T569 214T576 255T581 289H643V285Z"/></g></g></g></g></svg></mjx-container>是perfect lattice，把问题变成优化<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.59ex" height="1.552ex" role="img" focusable="false" viewbox="0 -686 703 686"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z"/></g></g></g></g></svg></mjx-container></li>
+<li>推导了<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="12.525ex" height="2.47ex" role="img" focusable="false" viewbox="0 -841.7 5536.1 1091.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"/><path data-c="72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z" transform="translate(389,0)"/></g></g><g data-mml-node="mo" transform="translate(781,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"/></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1170,0)"><g data-mml-node="mi"><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z"/></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1873,0)"><g data-mml-node="msup"><g data-mml-node="mi"/><g data-mml-node="TeXAtom" transform="translate(33,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"/></g></g></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2466.5,0)"><g data-mml-node="mi"><path data-c="1D40B" d="M643 285Q641 280 629 148T612 4V0H39V62H147V624H39V686H51Q75 683 228 683Q415 685 425 686H439V624H304V62H352H378Q492 62 539 138Q551 156 558 178T569 214T576 255T581 289H643V285Z"/></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3158.5,0)"><g data-mml-node="msup"><g data-mml-node="mi"/><g data-mml-node="TeXAtom" transform="translate(33,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"/></g></g></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3752.1,0)"><g data-mml-node="mi"><path data-c="1D40B" d="M643 285Q641 280 629 148T612 4V0H39V62H147V624H39V686H51Q75 683 228 683Q415 685 425 686H439V624H304V62H352H378Q492 62 539 138Q551 156 558 178T569 214T576 255T581 289H643V285Z"/><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z" transform="translate(692,0)"/></g></g><g data-mml-node="mo" transform="translate(5147.1,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"/></g></g></g></svg></mjx-container>的上界</li>
+<li><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.59ex" height="1.552ex" role="img" focusable="false" viewbox="0 -686 703 686"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D419" d="M80 430L92 686H358Q624 686 628 684Q638 679 638 656Q638 640 637 639Q637 638 445 353Q401 288 351 214T277 103L253 67L256 66Q258 66 265 66T279 66T298 66H343Q380 66 406 68T464 81T518 110T557 164T579 250Q583 278 583 298Q583 299 614 299H645V291Q643 281 636 150T627 8V0H353Q79 0 75 2Q64 7 64 31Q64 48 66 52L259 340L451 623Q451 624 384 624Q294 623 259 612Q155 581 143 446Q142 440 142 432V430H80Z"/></g></g></g></g></svg></mjx-container>的优化思路：搜索所有可行的整数矩阵，根据信道矩阵选择最优的</li>
+<li>学习了如何证明格问题的凹凸性，上下界的证明，关于trace的变换以及不等式的使用</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="https://www.getrevue.co/profile/qiuer222">
+            <span class="icon">
+              <i class="fa fa-bell"></i>
+            </span>
+
+            <span class="label">Newsletter</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/optimization/" rel="tag"><i class="fa fa-tag"></i> optimization</a>
+              <a href="/tags/reading/" rel="tag"><i class="fa fa-tag"></i> reading</a>
+              <a href="/tags/lattice/" rel="tag"><i class="fa fa-tag"></i> lattice</a>
+              <a href="/tags/precoding/" rel="tag"><i class="fa fa-tag"></i> precoding</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/ResponseLetter/" rel="prev" title="Response Letter写作">
+      <i class="fa fa-chevron-left"></i> Response Letter写作
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/240223_reading_cellfree/" rel="next" title="Reading(2):cell-free MIMO">
+      Reading(2):cell-free MIMO <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sec-II"><span class="nav-number">1.</span> <span class="nav-text">Sec II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sec-III"><span class="nav-number">2.</span> <span class="nav-text">Sec III</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sec-IV"><span class="nav-number">3.</span> <span class="nav-text">Sec IV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#summary"><span class="nav-number">4.</span> <span class="nav-text">summary</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="qiuer"
+      src="/images/bio-photo.jpg">
+  <p class="site-author-name" itemprop="name">qiuer</p>
+  <div class="site-description" itemprop="description">nonsense form nowhere</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:weirdrey666@gmail.com" title="E-Mail → mailto:weirdrey666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.getrevue.co/profile/qiuer222" title="Newsletter → https:&#x2F;&#x2F;www.getrevue.co&#x2F;profile&#x2F;qiuer222" rel="noopener" target="_blank"><i class="fa fa-bell fa-fw"></i>Newsletter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-anchor"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qiuer</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
