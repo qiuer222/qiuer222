@@ -225,49 +225,24 @@
         <p>给博客添一些新东西……</p>
 <p>置顶功能</p>
 <span id="more"></span>
+
 <h2 id="置顶"><a href="#置顶" class="headerlink" title="置顶"></a>置顶</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a5d85680722e">参考1 </a>，<a target="_blank" rel="noopener" href="https://www.itfanr.cc/2019/09/05/hexo-top-optimize/">参考2 </a></p>
 <p>目录中找到<code>/themes/next/layout/_macro/post.swig</code></p>
 <p>搜索如下一行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;# Link posts #&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这一行前添加：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;&lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这一部分完整为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;%- if post.header !== false %&#125;</span><br><span class="line">     &lt;header class=&quot;post-header&quot;&gt;   </span><br><span class="line">       &lt;&#123;%- if is_index %&#125;h2&#123;% else %&#125;h1&#123;%- endif %&#125; class=&quot;post-title&#123;%- if post.direction and post.direction.toLowerCase() === &#x27;rtl&#x27; %&#125; rtl&#123;%- endif %&#125;&quot; itemprop=&quot;name headline&quot;&gt;</span><br><span class="line">         &#123;% if post.top %&#125;&lt;i class=&quot;fa fa-thumbtack&quot;&gt;&lt;/i&gt;&#123;% endif %&#125;</span><br><span class="line">         &#123;# Link posts #&#125;</span><br><span class="line">         &#123;%- if post.link %&#125;</span><br><span class="line">         ...</span><br></pre></td></tr></table></figure>
 
+
     </div>
 
     
     
     
-        
-
-  <div class="followme">
-    <p>Welcome to my other publishing channels</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.getrevue.co/profile/qiuer222">
-            <span class="icon">
-              <i class="fa fa-bell"></i>
-            </span>
-
-            <span class="label">Newsletter</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
-  </div>
-
 
       <footer class="post-footer">
           
@@ -383,12 +358,6 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="mailto:weirdrey666@gmail.com" title="E-Mail → mailto:weirdrey666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.getrevue.co/profile/qiuer222" title="Newsletter → https:&#x2F;&#x2F;www.getrevue.co&#x2F;profile&#x2F;qiuer222" rel="noopener" target="_blank"><i class="fa fa-bell fa-fw"></i>Newsletter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
       </span>
   </div>
 

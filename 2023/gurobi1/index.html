@@ -234,6 +234,7 @@
       
         <p>尝试使用Gurobi对目前的问题进行求解。（失败！）</p>
 <span id="more"></span>
+
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去gurobi官网申请学术许可</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42477413/article/details/110119977">gurobi+matlab 简单QP例子-CSDN博客</a>一个简单的例子</p>
 <p>目前看到的例子中，目标函数只能是一次或者二次，obj中能不能有高次项？<a target="_blank" rel="noopener" href="https://blog.csdn.net/HsinglukLiu/article/details/120204112">Gurobi处理非线性目标函数和约束的详细案例-CSDN博客</a>提到的辅助变量能不能在目标函数中出现？</p>
@@ -247,6 +248,7 @@
 <p><img src="/2023/gurobi1/image-20231207205820448.png" alt="image-20231207205820448"></p>
 <p>下载了LMIRANK，但是：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Solver not applicable (lmirank does not support polynomial terms in objective)</span><br></pre></td></tr></table></figure>
+
 <h2 id="转换思路"><a href="#转换思路" class="headerlink" title="转换思路"></a>转换思路</h2><p>尝试把满秩换成行列式大于零，在二阶可以写成二次约束，可以运行但是效果一般（很一般）</p>
 <p><img src="/2023/gurobi1/image-20231207211825276.png" alt="image-20231207211825276"></p>
 <p>三阶以的多项式约束就infeasible了TT</p>
@@ -256,35 +258,6 @@
     
     
     
-        
-
-  <div class="followme">
-    <p>Welcome to my other publishing channels</p>
-
-    <div class="social-list">
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="https://www.getrevue.co/profile/qiuer222">
-            <span class="icon">
-              <i class="fa fa-bell"></i>
-            </span>
-
-            <span class="label">Newsletter</span>
-          </a>
-        </div>
-
-        <div class="social-item">
-          <a target="_blank" class="social-link" href="/atom.xml">
-            <span class="icon">
-              <i class="fa fa-rss"></i>
-            </span>
-
-            <span class="label">RSS</span>
-          </a>
-        </div>
-    </div>
-  </div>
-
 
       <footer class="post-footer">
           
@@ -303,8 +276,8 @@
       <i class="fa fa-chevron-left"></i> My Blog(3)--Hexo功能添加
     </a></div>
       <div class="post-nav-item">
-    <a href="/2024/ResponseLetter/" rel="next" title="Response Letter写作">
-      Response Letter写作 <i class="fa fa-chevron-right"></i>
+    <a href="/2024/ResponseLetter/" rel="next" title="科研小记--Response Letter写作">
+      科研小记--Response Letter写作 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -401,12 +374,6 @@
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="mailto:weirdrey666@gmail.com" title="E-Mail → mailto:weirdrey666@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://www.getrevue.co/profile/qiuer222" title="Newsletter → https:&#x2F;&#x2F;www.getrevue.co&#x2F;profile&#x2F;qiuer222" rel="noopener" target="_blank"><i class="fa fa-bell fa-fw"></i>Newsletter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
       </span>
   </div>
 
