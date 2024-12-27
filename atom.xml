@@ -6,7 +6,7 @@
   <link href="https://qiuer222.github.io/atom.xml" rel="self"/>
   
   <link href="https://qiuer222.github.io/"/>
-  <updated>2024-12-27T12:38:29.664Z</updated>
+  <updated>2024-12-27T12:48:18.288Z</updated>
   <id>https://qiuer222.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科研小记--Zotero批量设置属性</title>
+    <link href="https://qiuer222.github.io/undefined/zotero-batchSet/"/>
+    <id>https://qiuer222.github.io/undefined/zotero-batchSet/</id>
+    <published>2024-12-27T12:39:01.000Z</published>
+    <updated>2024-12-27T12:48:18.288Z</updated>
+    
+    <content type="html"><![CDATA[<p>如题</p><span id="more"></span><p>zotero batch set field</p><p><img src="/undefined/zotero-batchSet/image-20241117163857255-1735303287595-1.png" alt="image-20241117163857255"></p><ol><li><p>选中需要设置的条目</p></li><li><p>run</p></li></ol><p><img src="/undefined/zotero-batchSet/image-20241117164119715-1735303299647-3.png" alt="image-20241117164119715"></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = <span class="title class_">ZoteroPane</span>.<span class="title function_">getSelectedItems</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> items) &#123;</span><br><span class="line">item.<span class="title function_">setField</span>(<span class="string">&quot;journalAbbreviation&quot;</span>, item.<span class="title function_">getField</span>(<span class="string">&quot;journalAbbreviation&quot;</span>).<span class="title function_">replace</span>(<span class="regexp">/.*/</span>, <span class="string">&#x27;IEEE Trans. Inf. Theory&#x27;</span>));</span><br><span class="line"><span class="keyword">await</span> item.<span class="title function_">saveTx</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;如题&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="research" scheme="https://qiuer222.github.io/categories/research/"/>
+    
+    
+    <category term="zotero" scheme="https://qiuer222.github.io/tags/zotero/"/>
+    
+  </entry>
   
   <entry>
     <title>科研小记--matlab之mex</title>
