@@ -6,7 +6,7 @@
   <link href="https://qiuer222.github.io/atom.xml" rel="self"/>
   
   <link href="https://qiuer222.github.io/"/>
-  <updated>2024-12-11T13:08:43.810Z</updated>
+  <updated>2024-12-27T12:38:29.664Z</updated>
   <id>https://qiuer222.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>科研小记--matlab之mex</title>
+    <link href="https://qiuer222.github.io/undefined/matlab-mex1/"/>
+    <id>https://qiuer222.github.io/undefined/matlab-mex1/</id>
+    <published>2024-12-27T12:35:52.000Z</published>
+    <updated>2024-12-27T12:38:29.664Z</updated>
+    
+    <content type="html"><![CDATA[<p>matlab mex function</p><span id="more"></span><h1 id="MATLAB-cpp-mex-function"><a href="#MATLAB-cpp-mex-function" class="headerlink" title="MATLAB cpp mex function"></a>MATLAB cpp mex function</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mex.h&quot;</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">mexFunction</span><span class="params">(<span class="type">int</span> nlhs, mxArray* plhs[], <span class="type">int</span> nrhs, <span class="type">const</span> mxArray* prhs[])</span> </span>&#123;</span><br><span class="line"><span class="type">int</span> K = (<span class="type">int</span>)<span class="built_in">mxGetScalar</span>(prhs[<span class="number">0</span>]);</span><br><span class="line"><span class="type">int</span> n = (<span class="type">int</span>)<span class="built_in">mxGetScalar</span>(prhs[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">if</span>(n==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">mexErrMsgTxt</span>(<span class="string">&quot;n=0&quot;</span>);<span class="comment">//示错误信息，并终止程序运行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (nlhs &gt; <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">mexErrMsgIdAndTxt</span>( <span class="string">&quot;MATLAB:yprime:maxlhs&quot;</span>, <span class="string">&quot;There are %d output arguments.&quot;</span>, nlhs);</span><br><span class="line">&#125;</span><br><span class="line">plhs[<span class="number">0</span>] = <span class="built_in">mxCreateDoubleMatrix</span>(num,n, mxREAL);</span><br><span class="line"><span class="type">double</span>* K_set = <span class="built_in">mxGetPr</span>(plhs[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="输出消息"><a href="#输出消息" class="headerlink" title="输出消息"></a>输出消息</h3><p><a href="https://blog.csdn.net/LiFeitengup/article/details/9110245">ref</a></p><ul><li>void mexErrMsgTxt(const char *error_msg);</li></ul><p>在Matlab的Command Window中显示错误信息，并终止程序运行。</p><p>如用来判断输入参数的个数是否正确。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nrhs != <span class="number">1</span>)</span><br><span class="line"> &#123;</span><br><span class="line"> <span class="built_in">mexErrMsgTxt</span>(<span class="string">&quot;One input argument required.&quot;</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure><ul><li>void mexErrMsgIdAndTxt(const char * identifier, const char * err_msg, …);</li></ul><p>在Matlab的Command Window中显示错误信息的标识符和具体内容，并终止程序运行。 identifier表示错误信息的标识符，可以标明错误发生的位置和类型等信息。后面的省略号可以用来输出额外的参数。这个函数的用法和C语言的printf有点相似。</p><p>如用来判断输出参数的个数是否正确。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nlhs &gt; <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"> <span class="built_in">mexErrMsgIdAndTxt</span>( <span class="string">&quot;MATLAB:yprime:maxlhs&quot;</span>, <span class="string">&quot;Too many output arguments.&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也可以写成下述形式。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (nlhs &gt; <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"> <span class="built_in">mexErrMsgIdAndTxt</span>( <span class="string">&quot;MATLAB:yprime:maxlhs&quot;</span>, <span class="string">&quot;There are %d output arguments.&quot;</span>, nlhs);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>void mexWarnMsgTxt(const char *warn_msg);</li></ul><p>在Matlab的Command Window中显示警告信息，但并不终止程序运行。用法与mexErrMsgTxt函数相同。</p><ul><li>void mexWarnMsgIdAndTxt(const char * identifier, const char * warn_msg, …);</li></ul><p> 在Matlab的Command Window中显示警告信息的标识符和具体内容，但并不终止程序运行。用法与mexErrMsgIdAndTxt函数相同。</p><ul><li>int mexPrintf(const char *fmt, …);</li></ul><p> 在Matlab的Command Window中输出格式化的文本信息，和C语言的printf函数用法相同。</p><h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2><h3 id="不要随便把变量free"><a href="#不要随便把变量free" class="headerlink" title="不要随便把变量free"></a>不要随便把变量free</h3><p>以为给输出矩阵赋值了就可以把中间的数组free掉节省资源，但是好像把输出对应的地址给free了，运行.mex64，MATLAB闪退</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;matlab mex function&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="research" scheme="https://qiuer222.github.io/categories/research/"/>
+    
+    
+    <category term="matlab" scheme="https://qiuer222.github.io/tags/matlab/"/>
+    
+  </entry>
   
   <entry>
     <title>生活碎片--难得的课题组上海小聚</title>
@@ -138,11 +159,11 @@
   </entry>
   
   <entry>
-    <title>整数优化求解器使用之路</title>
+    <title>科研小记--整数优化求解器使用之路</title>
     <link href="https://qiuer222.github.io/2023/gurobi1/"/>
     <id>https://qiuer222.github.io/2023/gurobi1/</id>
     <published>2023-12-18T12:32:35.000Z</published>
-    <updated>2024-02-20T02:04:46.864Z</updated>
+    <updated>2024-12-11T13:14:36.692Z</updated>
     
     <content type="html"><![CDATA[<p>尝试使用Gurobi对目前的问题进行求解。（失败！）</p><span id="more"></span><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先去gurobi官网申请学术许可</p><p><a href="https://blog.csdn.net/qq_42477413/article/details/110119977">gurobi+matlab 简单QP例子-CSDN博客</a>一个简单的例子</p><p>目前看到的例子中，目标函数只能是一次或者二次，obj中能不能有高次项？<a href="https://blog.csdn.net/HsinglukLiu/article/details/120204112">Gurobi处理非线性目标函数和约束的详细案例-CSDN博客</a>提到的辅助变量能不能在目标函数中出现？</p><p><a href="https://zhuanlan.zhihu.com/p/631879265">MATLAB+Gurobi+Yalmip安装和使用教程 - 知乎 (zhihu.com)</a>正在使用r2018b，应该是旧版本的yalmip和最新的gurobi不兼容，开始下载新的matlab</p><p><img src="/2023/gurobi1/image-20231206095216351.png" alt="image-20231206095216351"></p><p>配置完成</p><h2 id="开始优化"><a href="#开始优化" class="headerlink" title="开始优化"></a>开始优化</h2><p>问题包含满秩整数矩阵约束，功率分配矩阵行列式等于1的约束</p><p>使用trace作为目标函数，约束条件prod(d)==1，大失败</p><p><img src="/2023/gurobi1/image-20231206104138430.png" alt="image-20231206104138430"></p><p>满秩约束不能在求解器中直接用，令人头疼，对rank的约束只能用在对称变量上，而且只有LMIRANK支持</p><p><img src="/2023/gurobi1/image-20231207205820448.png" alt="image-20231207205820448"></p><p>下载了LMIRANK，但是：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Warning: Solver not applicable (lmirank does not support polynomial terms in objective)</span><br></pre></td></tr></table></figure><h2 id="转换思路"><a href="#转换思路" class="headerlink" title="转换思路"></a>转换思路</h2><p>尝试把满秩换成行列式大于零，在二阶可以写成二次约束，可以运行但是效果一般（很一般）</p><p><img src="/2023/gurobi1/image-20231207211825276.png" alt="image-20231207211825276"></p><p>三阶以的多项式约束就infeasible了TT</p>]]></content>
     
